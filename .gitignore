@@ -5,6 +5,8 @@
 
 # Node artifact files
 node_modules/
+Intermediate/
+Binaries/
 dist/
 
 # Compiled Java class files
@@ -37,7 +39,6 @@ Thumbs.db
 
 # Applications
 *.app
-*.exe
 *.war
 
 # Large media files
