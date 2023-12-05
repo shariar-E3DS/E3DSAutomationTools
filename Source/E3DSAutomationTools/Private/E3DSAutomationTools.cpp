@@ -62,11 +62,11 @@ void FE3DSAutomationToolsModule::PluginButtonClicked()
 
 	int ErrorCheckResult = CheckForErrors();
 	if (ErrorCheckResult == 0) {
-		FString Temp_ExecutablePath = "\"" + FPaths::ConvertRelativePathToFull(Plugin_Settings->ExecutablePath.FilePath) + "\"";
+		FString Temp_ExecutablePath = "\"" + FPaths::ConvertRelativePathToFull(Plugin_Settings->E3DSExecutablePath.FilePath) + "\"";
 
-		Temp_ExecutablePath = FPaths::ConvertRelativePathToFull(Plugin_Settings->ExecutablePath.FilePath);
+		Temp_ExecutablePath = FPaths::ConvertRelativePathToFull(Plugin_Settings->E3DSExecutablePath.FilePath);
 
-		UE_LOG(LogTemp, Log, TEXT("ExecutablePath: %s"), *Temp_ExecutablePath);
+		UE_LOG(LogTemp, Log, TEXT("E3DSExecutablePath: %s"), *Temp_ExecutablePath);
 		const TCHAR* cmdPath = *(Temp_ExecutablePath);
 		UE_LOG(LogTemp, Log, TEXT("cmdPath: %s"), cmdPath);
 
@@ -86,7 +86,10 @@ void FE3DSAutomationToolsModule::PluginButtonClicked()
 		cmdParams.Append(" --UEExePath=");
 		cmdParams.Append(EngineExePath_Full);
 
+		
 
+		cmdParams.Append(" --TestUrl=");
+		cmdParams.Append(Plugin_Settings->TestUrl);
 
 		cmdParams.Append(" --UProjectPath=");
 		//cmdParams.Append(Plugin_Settings->UprojectPath);
@@ -105,8 +108,12 @@ void FE3DSAutomationToolsModule::PluginButtonClicked()
 		cmdParams.Append(" --E3DSStreamingAppName=");
 		cmdParams.Append(Plugin_Settings->E3DSStreamingAppName);
 
+		cmdParams.Append(" --PackagingModes=");
 
+		EPackagingModes MyEnumValue = Plugin_Settings->PackagingMode;
 
+		//cmdParams.Append(MyEnumValue);
+		cmdParams.Append(Plugin_Settings->GetEnumAsString(MyEnumValue));
 
 
 		FString PathTo7Zip = "\"" + FPaths::ConvertRelativePathToFull(Plugin_Settings->PathTo7Zip.FilePath) + "\"";
@@ -138,14 +145,13 @@ void FE3DSAutomationToolsModule::PluginButtonClicked()
 		// Get the root folder of the plugin where the .uplugin file exists
 		FString ProjectPluginsDir2 = FPaths::ProjectPluginsDir();
 
-		FString PluginRootFolder2 = ProjectPluginsDir2 + "E3DSAutomationTools/files";
+		FString PluginRootFolder2 = FPaths::GetPath(Temp_ExecutablePath);//ProjectPluginsDir2 + "E3DSAutomationTools/files";
 
 
 
 		// Now, you have the root folder of your plugin
 		UE_LOG(LogTemp, Warning, TEXT("Plugin Root Folder: %s"), *PluginRootFolder2);
 
-		FString MyString = "C:\\0.ue4\\auotmationELPLugin\\Plugins";
 		const TCHAR* OptionalWorkingDirectory = *PluginRootFolder2;
 		//cmdParams = "";
 		FProcHandle WorkHandle = FPlatformProcess::CreateProc(
@@ -203,10 +209,28 @@ int FE3DSAutomationToolsModule::CheckForErrors() {
 	UE3dsAutomationToolsSettings* Plugin_Settings = GetMutableDefault<UE3dsAutomationToolsSettings>();
 	FString ErrorMessage = "";
 	bool bHasError = false;
-	if (Plugin_Settings->ExecutablePath.FilePath.IsEmpty()) {
+	if (Plugin_Settings->E3DSExecutablePath.FilePath.IsEmpty()) {
 		ErrorMessage.Append("Executable file path is empty\n");
 		bHasError = true;
 	}
+	else
+	{
+
+
+		if (FPaths::FileExists(Plugin_Settings->E3DSExecutablePath.FilePath))
+		{
+			UE_LOG(LogTemp, Log, TEXT("E3DS Executable file exists."));
+		}
+		else
+		{
+			UE_LOG(LogTemp, Log, TEXT("E3DS Executable file does not exist."));
+			ErrorMessage.Append("E3DS Executable file does not exist.\n");
+			bHasError = true;
+
+		}
+
+	}
+
 	if (Plugin_Settings->EngineFolderPath.IsEmpty()) {
 		ErrorMessage.Append("Engine folder path is empty\n");
 		bHasError = true;
@@ -249,7 +273,7 @@ int FE3DSAutomationToolsModule::CheckForErrors() {
 }
 void FE3DSAutomationToolsModule::ShowErrorMessage(FString Message) {
 FText DialogText = FText::Format(
-	LOCTEXT("Error in Settings", "could not run Automation Tool:\n {0}"),
+	LOCTEXT("Error in Settings", "could not run E3DS Automation Tool:\n {0}"),
 	FText::FromString(Message)
 );
 FMessageDialog::Open(EAppMsgType::Ok, DialogText);

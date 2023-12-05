@@ -1,0 +1,13 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.E3DSAutomationTools.cpp.obj": [
+			"E3DSAutomationTools.init.gen.cpp.obj",
+			"E3dsAutomationToolsSettings.gen.cpp.obj",
+			"E3DSAutomationTools.cpp.obj",
+			"E3DSAutomationToolsCommands.cpp.obj",
+			"E3dsAutomationToolsSettings.cpp.obj",
+			"E3DSAutomationToolsStyle.cpp.obj"
+		]
+	}
+}

@@ -1,0 +1,40 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\0.ue4\\ue53_tiny\\plugins\\e3dsautomationtools\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\e3dsautomationtools\\module.e3dsautomationtools.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\0.ue4\\ue53_tiny\\intermediate\\build\\win64\\x64\\ue53_tinyeditor\\development\\unrealed\\sharedpch.unrealed.cpp20.inclorderunreal5_0.h.pch",
+        "Includes": [
+            "c:\\0.ue4\\ue53_tiny\\plugins\\e3dsautomationtools\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\e3dsautomationtools\\definitions.e3dsautomationtools.h",
+            "c:\\0.ue4\\ue53_tiny\\plugins\\e3dsautomationtools\\intermediate\\build\\win64\\unrealeditor\\inc\\e3dsautomationtools\\uht\\e3dsautomationtools.init.gen.cpp",
+            "c:\\0.ue4\\ue53_tiny\\plugins\\e3dsautomationtools\\intermediate\\build\\win64\\unrealeditor\\inc\\e3dsautomationtools\\uht\\e3dsautomationtoolssettings.gen.cpp",
+            "c:\\0.ue4\\ue53_tiny\\plugins\\e3dsautomationtools\\source\\e3dsautomationtools\\public\\e3dsautomationtoolssettings.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\coreuobject\\public\\uobject\\noexporttypes.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\coreuobject\\public\\uobject\\propertyaccessutil.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\coreuobject\\public\\serialization\\testundeclaredscriptstructobjectreferences.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\core\\public\\math\\unitconversion.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\core\\public\\math\\unitconversion.inl",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\core\\public\\internationalization\\polyglottextdata.h",
+            "c:\\0.ue4\\ue53_tiny\\plugins\\e3dsautomationtools\\intermediate\\build\\win64\\unrealeditor\\inc\\e3dsautomationtools\\uht\\e3dsautomationtoolssettings.generated.h",
+            "c:\\0.ue4\\ue53_tiny\\plugins\\e3dsautomationtools\\source\\e3dsautomationtools\\private\\e3dsautomationtools.cpp",
+            "c:\\0.ue4\\ue53_tiny\\plugins\\e3dsautomationtools\\source\\e3dsautomationtools\\public\\e3dsautomationtools.h",
+            "c:\\0.ue4\\ue53_tiny\\plugins\\e3dsautomationtools\\source\\e3dsautomationtools\\public\\e3dsautomationtoolsstyle.h",
+            "c:\\0.ue4\\ue53_tiny\\plugins\\e3dsautomationtools\\source\\e3dsautomationtools\\public\\e3dsautomationtoolscommands.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\developer\\settings\\public\\isettingsmodule.h",
+            "c:\\0.ue4\\ue53_tiny\\plugins\\e3dsautomationtools\\source\\e3dsautomationtools\\private\\e3dsautomationtoolscommands.cpp",
+            "c:\\0.ue4\\ue53_tiny\\plugins\\e3dsautomationtools\\source\\e3dsautomationtools\\private\\e3dsautomationtoolssettings.cpp",
+            "c:\\0.ue4\\ue53_tiny\\plugins\\e3dsautomationtools\\source\\e3dsautomationtools\\private\\e3dsautomationtoolsstyle.cpp",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\slatecore\\public\\styling\\slatestyleregistry.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\public\\slate\\slategameresources.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\projects\\public\\interfaces\\ipluginmanager.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\projects\\public\\plugindescriptor.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\projects\\public\\custombuildsteps.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\projects\\public\\localizationdescriptor.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\projects\\public\\moduledescriptor.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\projects\\public\\pluginreferencedescriptor.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\projects\\public\\versescope.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

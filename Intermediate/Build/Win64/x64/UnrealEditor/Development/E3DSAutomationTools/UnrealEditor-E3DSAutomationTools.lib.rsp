@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-E3DSAutomationTools.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\0.ue4\UE53_Tiny\Intermediate\Build\Win64\x64\UE53_TinyEditor\Development\UnrealEd\SharedPCH.UnrealEd.Cpp20.InclOrderUnreal5_0.h.obj"
+"C:\0.ue4\UE53_Tiny\Plugins\E3DSAutomationTools\Intermediate\Build\Win64\x64\UnrealEditor\Development\E3DSAutomationTools\Module.E3DSAutomationTools.cpp.obj"
+"C:\0.ue4\UE53_Tiny\Plugins\E3DSAutomationTools\Intermediate\Build\Win64\x64\UnrealEditor\Development\E3DSAutomationTools\Default.rc2.res"
+/OUT:"C:\0.ue4\UE53_Tiny\Plugins\E3DSAutomationTools\Intermediate\Build\Win64\x64\UnrealEditor\Development\E3DSAutomationTools\UnrealEditor-E3DSAutomationTools.lib"
