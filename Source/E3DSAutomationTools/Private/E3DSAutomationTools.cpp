@@ -260,9 +260,11 @@ int FE3DSAutomationToolsModule::CheckForErrors() {
 		bHasError = true;
 	}
 	if (Plugin_Settings->DoDedicatedServerBuild) {
-		if(Plugin_Settings->E3DSDedicatedServerAppName.IsEmpty())
-		ErrorMessage.Append("Dedicated server app name is empty\n");
-		bHasError = true;
+		if (Plugin_Settings->E3DSDedicatedServerAppName.IsEmpty())
+		{
+			ErrorMessage.Append("Dedicated server app name is empty\n");
+			bHasError = true;
+		}
 	}
 
 	if (bHasError) {
