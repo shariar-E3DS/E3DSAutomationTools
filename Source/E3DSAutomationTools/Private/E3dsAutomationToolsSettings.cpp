@@ -99,6 +99,6 @@ UE3dsAutomationToolsSettings::UE3dsAutomationToolsSettings(const FObjectInitiali
   
    
 
-    E3DSExecutablePath.FilePath = ProjectPluginsDir + "/files/el_am.exe";
+    E3DSExecutablePath.FilePath = ProjectPluginsDir + "/files/el_AT.exe";
 
 }
