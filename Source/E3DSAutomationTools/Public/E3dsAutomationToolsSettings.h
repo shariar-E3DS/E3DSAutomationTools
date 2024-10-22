@@ -25,19 +25,14 @@ class E3DSAUTOMATIONTOOLS_API UE3dsAutomationToolsSettings : public UObject
 	GENERATED_BODY()
 
 public:
-	FString GetEnumAsString(EPackagingModes EnumValue)
+	template< typename T >
+	FString EnumToString(T EnumValue)
 	{
-		const UEnum* EnumPtr = FindObject<UEnum>(ANY_PACKAGE, TEXT("EPackagingModes"), true);
-		if (!EnumPtr)
-		{
-			// Handle error, enum not found
-			return FString();
-		}
-
-		return EnumPtr->GetDisplayNameTextByIndex(static_cast<int32>(EnumValue)).ToString();
+		static_assert(TIsUEnumClass< T >::Value, "'T' template parameter to EnumToString must be a valid UEnum");
+		return StaticEnum< T >()->GetNameStringByValue((int64)EnumValue);
 	}
 	
-
+	
 	UE3dsAutomationToolsSettings(const FObjectInitializer& obj);
 	UPROPERTY(Config, EditAnywhere, Category = "E3DS Automation Settings", DisplayName = "Path to E3DS Executable" )
 
@@ -72,7 +67,7 @@ public:
 		FString E3DSStreamingAppName;
 
 	UPROPERTY(Config, EditAnywhere, Category = "E3DS Automation Settings")
-		TEnumAsByte<EPackagingModes> PackagingMode;
+		EPackagingModes PackagingMode;
 
 	UPROPERTY(Config, EditAnywhere, Category = "E3DS Automation Settings")
 		FDirectoryPath PackagingFolder;

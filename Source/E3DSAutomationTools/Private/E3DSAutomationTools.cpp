@@ -113,7 +113,7 @@ void FE3DSAutomationToolsModule::PluginButtonClicked()
 		EPackagingModes MyEnumValue = Plugin_Settings->PackagingMode;
 
 		//cmdParams.Append(MyEnumValue);
-		cmdParams.Append(Plugin_Settings->GetEnumAsString(MyEnumValue));
+		cmdParams.Append(Plugin_Settings->EnumToString(MyEnumValue));
 
 
 		FString PathTo7Zip = "\"" + FPaths::ConvertRelativePathToFull(Plugin_Settings->PathTo7Zip.FilePath) + "\"";
