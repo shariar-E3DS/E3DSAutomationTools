@@ -230,7 +230,14 @@ int FE3DSAutomationToolsModule::CheckForErrors() {
 		}
 
 	}
-
+	FModuleManager& ModuleManager = FModuleManager::Get();
+	if (ModuleManager.IsModuleLoaded("PixelStreaming")) {
+		
+	}
+	else {
+		ErrorMessage.Append("Pixel Streaming plugin is not enabled\n");
+		bHasError = true;
+	}
 	if (Plugin_Settings->EngineFolderPath.IsEmpty()) {
 		ErrorMessage.Append("Engine folder path is empty\n");
 		bHasError = true;
