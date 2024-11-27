@@ -18,8 +18,8 @@ enum class EPackagingModes : uint8
 };
 
 
-
-UCLASS(config = MySetting)
+ 
+UCLASS(config = E3DSAutomationToolsSettings)
 class E3DSAUTOMATIONTOOLS_API UE3dsAutomationToolsSettings : public UObject
 {
 	GENERATED_BODY()
